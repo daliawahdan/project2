@@ -1,20 +1,28 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Globalization;
-
-Console.WriteLine("please enter the 1st no");
-int x = int.Parse(Console.ReadLine());
-Console.WriteLine("please enter the 2nd no");
-int y = int.Parse(Console.ReadLine());
-
-for(int i = x ; i <= y ; i++)
+﻿// See https://aka.ms/new-console-template  for more information
+int n1, n2, i,temp;
+Console.WriteLine("n1");                                   
+ n1 = int.Parse(Console.ReadLine());                   
+Console.WriteLine("n2");                                 
+n2 = int.Parse(Console.ReadLine());                
+if (n1 > n2)
 {
-    int sum = 0;
-    for (int j = 1; j < i; j++)
+    temp = n1;
+    n1 = n2;
+    n2 = temp;
+}
+while (n1<n2)
+{
+    bool flag = true;
+    for (i = 2; i < n1; i++)
     {
-        if (i % j == 0)
-            sum = sum + j;
-    }
-    if (sum == i)
-        Console.WriteLine("\t" + i);
-}    
+        if (n1 % i == 0)
+        {
+            flag = false; break;
+        }
+}
+    if (flag == true)
+     Console.WriteLine("\t" + n1);
+    n1++;
+}
+Console.ReadLine();
 
